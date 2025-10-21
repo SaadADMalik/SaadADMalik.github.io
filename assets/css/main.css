@@ -4689,9 +4689,10 @@ input, select, textarea {
 
 	}
 
-/* ===== Project grid & uniform thumbnail fixes (REPLACE previous appended block with this) ===== */
+/* ===== Project thumbnail fixes: show full images, graceful missing-image handling =====
+   Replace previous appended block with this one.
+*/
 
-/* Grid container */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -4703,32 +4704,28 @@ input, select, textarea {
   box-sizing: border-box;
 }
 
-/* Make each featured post a flexible column so header, image and actions align */
 .post.featured {
   display: flex;
   flex-direction: column;
   height: 100%;
   box-sizing: border-box;
   background: transparent;
-  padding: 0; /* spacing handled on grid items below */
+  padding: 0;
 }
 
-/* Prevent legacy width:50% rules from constraining grid items */
+/* Reset legacy width:50% rules so grid sizing controls layout */
 #main > .posts.projects-grid > *,
 #main > section.posts.projects-grid > * {
   width: auto !important;
   padding: 1.25rem !important;
   margin: 0 !important;
   box-sizing: border-box;
-  text-align: left; /* left-align content for readability */
+  text-align: left;
 }
 
-/* Let the textual header grow so cards align evenly regardless of text length */
-.post.featured > .major {
-  flex: 1 1 auto;
-}
+/* Keep the header area flexible */
+.post.featured > .major { flex: 1 1 auto; }
 
-/* Header layout tweaks */
 .post.featured header.major {
   text-align: left;
   margin-bottom: 1rem;
@@ -4737,74 +4734,80 @@ input, select, textarea {
 
 .post.featured header.major > .date {
   display: block;
-  text-align: center; /* keep the date centered above the title */
+  text-align: center;
   margin: 0 0 1rem 0;
   font-size: 0.95rem;
 }
 
-/* Title (h3) readability fixes */
+/* Title wrapping / readability */
 .post.featured header.major h3 {
   font-size: 1.15rem;
   line-height: 1.25;
   margin: 0 0 0.75rem 0;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  white-space: normal;   /* allow normal wrapping */
-  word-break: normal;    /* avoid aggressive breaking */
-  hyphens: auto;         /* allow hyphenation if needed */
+  white-space: normal;
+  word-break: normal;
+  hyphens: auto;
 }
 
-/* If titles are links, keep them inline-block so they wrap naturally */
-.post.featured header.major h3 > a,
-.post.featured header.major h3 a {
-  display: inline;
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Uniform thumbnail container to keep consistent card height */
+/* NEW: image container keeps a consistent visual area but doesn't aggressively crop images */
 .post .image.main {
   width: 100%;
-  height: 220px; /* uniform thumbnail visual height */
+  /* keep a consistent visual height but allow the image to scale inside */
+  min-height: 160px;
+  max-height: 300px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  display: block;
   border-radius: 4px;
   margin-top: 0.75rem;
   box-sizing: border-box;
-  background-color: #f6f6f6; /* neutral background while image loads */
+  background-color: #f6f6f6;
+  position: relative;
+  padding: 0.5rem; /* small padding so contained images with object-fit:contain don't touch edges */
 }
 
-/* Force images to fill the container while keeping aspect ratio; crop if necessary */
+/* Let images scale while preserving full content */
 .post .image.main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* crop but keep subject centered */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* show whole image (no cropping) */
   display: block;
 }
 
-/* Keep action spacing consistent and center the button row */
+/* If the image fails to load, hide the broken-icon, show a neutral placeholder area:
+   We cannot detect a 404 purely in CSS reliably, but this makes broken-icon less jarring. */
+.post .image.main img[alt] {
+  /* nothing required; browsers may still render broken icon.
+     See debug steps below to address missing file. */
+}
+
+/* Actions / buttons */
 .post .actions.special {
   margin-top: 0.75rem;
   padding-bottom: 0.5rem;
   justify-content: center;
 }
 
-/* Description paragraph tweaks for nicer spacing and alignment */
 .post.featured .major p {
   margin: 0 0 1rem 0;
   text-align: left;
-  font-style: normal; /* keep the same font family as before but readable */
   line-height: 1.8;
 }
 
-/* Responsive thumbnail height adjustments */
+/* Responsive */
 @media (max-width: 480px) {
-  .post .image.main { height: 160px; }
+  .post .image.main { min-height: 120px; max-height: 220px; padding: 0.25rem; }
   .projects-grid { grid-template-columns: 1fr; }
   #main > .posts.projects-grid > * { padding: 1rem !important; }
 }
 
 @media (min-width: 1200px) {
-  .post .image.main { height: 260px; }
+  .post .image.main { min-height: 200px; max-height: 320px; }
   .projects-grid { gap: 2rem; }
 }
