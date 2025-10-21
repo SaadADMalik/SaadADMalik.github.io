@@ -4689,18 +4689,18 @@ input, select, textarea {
 
 	}
 
-/* APPEND THIS BLOCK to the END of assets/css/main.css (do NOT replace the whole file) */
+/* ===== Project grid & uniform thumbnail fixes (REPLACE previous appended block with this) ===== */
 
-/* ===== Project grid & uniform thumbnail fixes (append only) ===== */
-
-/* Turn the posts list into a responsive grid */
+/* Grid container */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
   align-items: start;
   margin: 0 auto;
   padding: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Make each featured post a flexible column so header, image and actions align */
@@ -4710,17 +4710,62 @@ input, select, textarea {
   height: 100%;
   box-sizing: border-box;
   background: transparent;
+  padding: 0; /* spacing handled on grid items below */
 }
 
-/* Let text area grow so cards align evenly regardless of text length */
+/* Prevent legacy width:50% rules from constraining grid items */
+#main > .posts.projects-grid > *,
+#main > section.posts.projects-grid > * {
+  width: auto !important;
+  padding: 1.25rem !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+  text-align: left; /* left-align content for readability */
+}
+
+/* Let the textual header grow so cards align evenly regardless of text length */
 .post.featured > .major {
   flex: 1 1 auto;
+}
+
+/* Header layout tweaks */
+.post.featured header.major {
+  text-align: left;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.post.featured header.major > .date {
+  display: block;
+  text-align: center; /* keep the date centered above the title */
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+}
+
+/* Title (h3) readability fixes */
+.post.featured header.major h3 {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: normal;   /* allow normal wrapping */
+  word-break: normal;    /* avoid aggressive breaking */
+  hyphens: auto;         /* allow hyphenation if needed */
+}
+
+/* If titles are links, keep them inline-block so they wrap naturally */
+.post.featured header.major h3 > a,
+.post.featured header.major h3 a {
+  display: inline;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Uniform thumbnail container to keep consistent card height */
 .post .image.main {
   width: 100%;
-  height: 220px; /* visual thumbnail height (tweak if you want taller/shorter) */
+  height: 220px; /* uniform thumbnail visual height */
   overflow: hidden;
   display: block;
   border-radius: 4px;
@@ -4733,45 +4778,33 @@ input, select, textarea {
 .post .image.main img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* change to 'contain' if you prefer letterboxing instead of crop */
+  object-fit: cover; /* crop but keep subject centered */
   display: block;
 }
 
-/* Keep action spacing consistent */
+/* Keep action spacing consistent and center the button row */
 .post .actions.special {
   margin-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  justify-content: center;
 }
 
-/* Mobile: slightly smaller thumbnails */
-@media (max-width: 480px) {
-  .post .image.main {
-    height: 160px;
-  }
-}
-
-/* Large screens: slightly taller thumbnails */
-@media (min-width: 1200px) {
-  .post .image.main {
-    height: 260px;
-  }
-}
-
-/* Ensure compatibility with existing #main > .posts selector if used */
-#main > .posts.projects-grid,
-#main > section.posts.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
-  padding: 0;
-}
-
-/* Small fix: keep a consistent border and spacing on grid children */
-#main > .posts.projects-grid > article,
-#main > section.posts.projects-grid > article {
-  border-color: #eeeeee;
-  border-style: solid;
-  border-width: 0 0 0 0;
-  padding: 1.5rem;
+/* Description paragraph tweaks for nicer spacing and alignment */
+.post.featured .major p {
+  margin: 0 0 1rem 0;
   text-align: left;
+  font-style: normal; /* keep the same font family as before but readable */
+  line-height: 1.8;
+}
+
+/* Responsive thumbnail height adjustments */
+@media (max-width: 480px) {
+  .post .image.main { height: 160px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  #main > .posts.projects-grid > * { padding: 1rem !important; }
+}
+
+@media (min-width: 1200px) {
+  .post .image.main { height: 260px; }
+  .projects-grid { gap: 2rem; }
 }
