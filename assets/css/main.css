@@ -5,6 +5,7 @@
 	Massively by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
 */
 
 html, body, div, span, applet, object,
@@ -4687,3 +4688,90 @@ input, select, textarea {
 		}
 
 	}
+
+/* APPEND THIS BLOCK to the END of assets/css/main.css (do NOT replace the whole file) */
+
+/* ===== Project grid & uniform thumbnail fixes (append only) ===== */
+
+/* Turn the posts list into a responsive grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Make each featured post a flexible column so header, image and actions align */
+.post.featured {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* Let text area grow so cards align evenly regardless of text length */
+.post.featured > .major {
+  flex: 1 1 auto;
+}
+
+/* Uniform thumbnail container to keep consistent card height */
+.post .image.main {
+  width: 100%;
+  height: 220px; /* visual thumbnail height (tweak if you want taller/shorter) */
+  overflow: hidden;
+  display: block;
+  border-radius: 4px;
+  margin-top: 0.75rem;
+  box-sizing: border-box;
+  background-color: #f6f6f6; /* neutral background while image loads */
+}
+
+/* Force images to fill the container while keeping aspect ratio; crop if necessary */
+.post .image.main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* change to 'contain' if you prefer letterboxing instead of crop */
+  display: block;
+}
+
+/* Keep action spacing consistent */
+.post .actions.special {
+  margin-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Mobile: slightly smaller thumbnails */
+@media (max-width: 480px) {
+  .post .image.main {
+    height: 160px;
+  }
+}
+
+/* Large screens: slightly taller thumbnails */
+@media (min-width: 1200px) {
+  .post .image.main {
+    height: 260px;
+  }
+}
+
+/* Ensure compatibility with existing #main > .posts selector if used */
+#main > .posts.projects-grid,
+#main > section.posts.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  padding: 0;
+}
+
+/* Small fix: keep a consistent border and spacing on grid children */
+#main > .posts.projects-grid > article,
+#main > section.posts.projects-grid > article {
+  border-color: #eeeeee;
+  border-style: solid;
+  border-width: 0 0 0 0;
+  padding: 1.5rem;
+  text-align: left;
+}
