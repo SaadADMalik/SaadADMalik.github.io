@@ -20,26 +20,28 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
+  username: "Saad Waleed",
+  title: "Hi, I'm Saad",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "Applied AI / LLM Engineer with 5 years of experience building AI-powered products across LLM apps, retrieval pipelines, backend APIs, analytics dashboards, and ML-driven decision tools. Specialized in agentic LLM systems with multi-step reasoning, tool integration, and production-grade orchestration (RAG + decision loops + async workflows)."
   ),
-  resumeLink:
-    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+  resumeLink: "https://drive.google.com/file/d/1uf1zskca48_RKbFaPDFFNAY6AZGy9xxT/view?usp=drivesdk", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
+  github: "https://github.com/SaadADMalik",
+  linkedin: "https://linkedin.com/in/saadwaleedmalik",
+  gmail: "saadadmalik04@gmail.com",
+  // gitlab: "",
+  // facebook: "",
+  // medium: "",
+  // stackoverflow: "",
+  // twitter: "",
+  // instagram: "",
+  // kaggle: "",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -49,14 +51,16 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "Applied AI and LLM engineer focused on production-grade systems",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+      "⚡ Build agentic LLM systems with multi-step reasoning, tool calling, and orchestration"
     ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
     emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
+      "⚡ Design RAG pipelines with hybrid search, re-ranking, and confidence gating"
+    ),
+    emoji(
+      "⚡ Ship AI-enabled products with Python APIs, async workflows, and cloud deployment"
     )
   ],
 
@@ -65,56 +69,52 @@ https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
+      skillName: "Python",
+      fontAwesomeClassname: "fab fa-python"
     },
     {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
     },
     {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
+      skillName: "TypeScript",
+      fontAwesomeClassname: "fab fa-js"
     },
     {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
+      skillName: "SQL",
       fontAwesomeClassname: "fas fa-database"
     },
     {
-      skillName: "aws",
+      skillName: "C#",
+      fontAwesomeClassname: "fas fa-code"
+    },
+    {
+      skillName: "FastAPI",
+      fontAwesomeClassname: "fas fa-bolt"
+    },
+    {
+      skillName: "Flask",
+      fontAwesomeClassname: "fas fa-flask"
+    },
+    {
+      skillName: "React",
+      fontAwesomeClassname: "fab fa-react"
+    },
+    {
+      skillName: "Docker",
+      fontAwesomeClassname: "fab fa-docker"
+    },
+    {
+      skillName: "AWS",
       fontAwesomeClassname: "fab fa-aws"
     },
     {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
+      skillName: "LLM Orchestration",
+      fontAwesomeClassname: "fas fa-brain"
     },
     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
-    },
-    {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
+      skillName: "RAG Pipelines",
+      fontAwesomeClassname: "fas fa-robot"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -126,23 +126,12 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
-      descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
-    },
-    {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
+      schoolName: "Superior University",
+      logo: require("./assets/images/skill.svg"),
+      subHeader: "ADP in Artificial Intelligence",
+      duration: "",
+      desc: "Focused on applied AI systems and machine learning.",
+      descBullets: []
     }
   ]
 };
@@ -153,16 +142,16 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      Stack: "AI/LLM Systems",
+      progressPercentage: "90%"
     },
     {
-      Stack: "Backend",
-      progressPercentage: "70%"
+      Stack: "Backend APIs",
+      progressPercentage: "80%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "60%"
+      Stack: "Data/ML",
+      progressPercentage: "75%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -174,29 +163,46 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
-      companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      role: "AI Engineer",
+      company: "Autosmart Tech",
+      companylogo: require("./assets/images/autosmarttech_logo.png"),
+      date: "July 2025 - Present",
+      desc:
+        "Full-stack development of mobile and backend applications for automotive workshop automation, including customer management, vehicle tracking, job scheduling, and analytics.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Architected agentic AI workflows (intent parsing -> decision routing -> backend execution -> response generation) using OpenAI APIs for 15+ workshops.",
+        "Led voice-first interface design for multilingual mechanics, achieving 84% intent accuracy through iterative prompt engineering.",
+        "Implemented secure intent-based JSON boundaries so LLM services never access databases directly.",
+        "Shipped features end-to-end, including real-time job tracking, SLA monitoring, and labor-time analytics.",
+        "Established code review practices and CI/CD pipelines for mobile releases."
       ]
     },
     {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "AI / ML Engineer",
+      company: "Optivex Solutions",
+      companylogo: require("./assets/images/optivex.png"),
+      date: "Feb 2023 - July 2025",
+      desc:
+        "Built a scalable RAG system for an internal casino knowledge base with role-based access and 8TB of data.",
+      descBullets: [
+        "Implemented a hybrid offline LLM architecture to keep sensitive data local while sending only embeddings to the cloud.",
+        "Deployed on AWS EC2 with metadata-based caching and precise chunking to reduce latency and cost.",
+        "Designed efficient retrieval workflows to support real-time querying across multiple roles without compromising security."
+      ]
     },
     {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      role: "ML Engineer / Data Scientist",
+      company: "Freelance",
+      companylogo: require("./assets/images/jsFramework.svg"),
+      date: "Jan 2021 - Feb 2023",
+      desc:
+        "Delivered ML-driven decision tools for ecommerce and subscription businesses using Python, scikit-learn, and API-based inference.",
+      descBullets: [
+        "Built a hybrid recommendation system that improved user engagement by 15-20%.",
+        "Deployed churn prediction (~80-85% accuracy) enabling targeted retention efforts.",
+        "Automated data pipelines and ML workflows, reducing analysis turnaround time by 25-30%.",
+        "Improved model stability with feature engineering and validation, increasing key metrics by 10-15%."
+      ]
     }
   ]
 };
@@ -212,31 +218,36 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Key Projects",
+  subtitle: "Production-grade AI systems and platforms",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
-        }
-        //  you can add extra buttons here.
-      ]
+      image: require("./assets/images/skill.svg"),
+      projectName: "Autonomous Agentic Research Assistant",
+      projectDesc:
+        "Built a tool-calling LLM system with retrieval orchestration, confidence gating, and async decision loops. Reduced runtime errors from 12% to 0% while maintaining ~2.3s/query average throughput.",
+      footerLink: []
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "http://nextu.se/"
-        }
-      ]
+      image: require("./assets/images/programmer.svg"),
+      projectName: "Identity Theft Protection (IDP MasterCard)",
+      projectDesc:
+        "Delivered a .NET + Angular subscription orchestration platform integrating telcos via APIs, webhooks, vouchers, and SFTP. Implemented idempotent event ingestion, secure PII handling, and AI-driven reconciliation anomaly detection.",
+      footerLink: []
+    },
+    {
+      image: require("./assets/images/jsFramework.svg"),
+      projectName: "Casino Knowledge Base RAG System",
+      projectDesc:
+        "Built a scalable RAG system for an 8TB knowledge base with hybrid BM25 + vector retrieval, cross-encoder reranking, and role-based access control on AWS EC2.",
+      footerLink: []
+    },
+    {
+      image: require("./assets/images/developerActivity.svg"),
+      projectName: "AutoInsight (Digitizing Workshops)",
+      projectDesc:
+        "Created a Flutter + .NET workshop operations app with voice assistant support (Urdu/Hinglish), intent-based JSON boundaries, and real-time job tracking with SLAs.",
+      footerLink: []
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -246,58 +257,44 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+  title: emoji("Certifications 🏆 "),
+  subtitle: "Professional certifications and coursework",
 
   achievementsCards: [
     {
-      title: "Google Code-In Finalist",
-      subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
-        },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
-        }
-      ]
+      title: "Large Language Models on AWS",
+      subtitle: "Certification coursework in LLM deployment on AWS.",
+      image: require("./assets/images/skill.svg"),
+      imageAlt: "LLM on AWS",
+      footerLink: []
     },
     {
-      title: "Google Assistant Action",
-      subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
-      footerLink: [
-        {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
-        }
-      ]
+      title: "MLOps Essentials: Model Deployment and Monitoring",
+      subtitle: "Best practices for deploying and monitoring ML systems.",
+      image: require("./assets/images/skill.svg"),
+      imageAlt: "MLOps Deployment",
+      footerLink: []
     },
-
     {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
-      footerLink: [
-        {name: "Certification", url: ""},
-        {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
-        }
-      ]
+      title: "MLOps Essentials: Model Development and Integration",
+      subtitle: "End-to-end ML development and integration workflows.",
+      image: require("./assets/images/skill.svg"),
+      imageAlt: "MLOps Development",
+      footerLink: []
+    },
+    {
+      title: "MLflow and Hugging Face Tools",
+      subtitle: "Experiment tracking and model tooling ecosystem.",
+      image: require("./assets/images/skill.svg"),
+      imageAlt: "MLflow and Hugging Face",
+      footerLink: []
+    },
+    {
+      title: "AWS Machine Learning / Deployment Coursework",
+      subtitle: "Applied machine learning deployment coursework on AWS.",
+      image: require("./assets/images/skill.svg"),
+      imageAlt: "AWS ML Deployment",
+      footerLink: []
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -307,56 +304,28 @@ const achievementSection = {
 
 const blogSection = {
   title: "Blogs",
-  subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
-  blogs: [
-    {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
-      description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
-    },
-    {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
+  subtitle: "",
+  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
+  blogs: [],
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
 
 const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
-
-  talks: [
-    {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
+  title: "Talks",
+  subtitle: "",
+  talks: [],
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
 
 const podcastSection = {
   title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
-
-  // Please Provide with Your Podcast embeded Link
-  podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
-  ],
-  display: true // Set false to hide this section, defaults to true
+  subtitle: "",
+  podcast: [],
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Resume Section
@@ -370,17 +339,16 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  subtitle: "Discuss a project or want to collaborate? My inbox is open.",
+  number: "+92-306-4009748",
+  email_address: "saadadmalik04@gmail.com"
 };
 
 // Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  userName: "", //Replace "twitter" with your twitter username without @
+  display: false // Set true to display this section, defaults to false
 };
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
