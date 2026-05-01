@@ -222,28 +222,28 @@ const bigProjects = {
   subtitle: "Production-grade AI systems and platforms",
   projects: [
     {
-      image: require("./assets/images/skill.svg"),
+      image: require("./assets/images/research.png"),
       projectName: "Autonomous Agentic Research Assistant",
       projectDesc:
         "Built a tool-calling LLM system with retrieval orchestration, confidence gating, and async decision loops. Reduced runtime errors from 12% to 0% while maintaining ~2.3s/query average throughput.",
       footerLink: []
     },
     {
-      image: require("./assets/images/programmer.svg"),
+      image: require("./assets/images/mastercard.png"),
       projectName: "Identity Theft Protection (IDP MasterCard)",
       projectDesc:
         "Delivered a .NET + Angular subscription orchestration platform integrating telcos via APIs, webhooks, vouchers, and SFTP. Implemented idempotent event ingestion, secure PII handling, and AI-driven reconciliation anomaly detection.",
       footerLink: []
     },
     {
-      image: require("./assets/images/jsFramework.svg"),
+      image: require("./assets/images/casino.png"),
       projectName: "Casino Knowledge Base RAG System",
       projectDesc:
         "Built a scalable RAG system for an 8TB knowledge base with hybrid BM25 + vector retrieval, cross-encoder reranking, and role-based access control on AWS EC2.",
       footerLink: []
     },
     {
-      image: require("./assets/images/developerActivity.svg"),
+      image: require("./assets/images/auto_insight.png"),
       projectName: "AutoInsight (Digitizing Workshops)",
       projectDesc:
         "Created a Flutter + .NET workshop operations app with voice assistant support (Urdu/Hinglish), intent-based JSON boundaries, and real-time job tracking with SLAs.",
