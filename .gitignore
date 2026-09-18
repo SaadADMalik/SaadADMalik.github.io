@@ -1,0 +1,12 @@
+node_modules
+dist
+docs
+tmp-frames
+.DS_Store
+*.local
+_resume_extract.txt
+_rift_readme.md
+_peak_readme.md
+__pycache__
+/*.mp4
+/17490658599291.jpg

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1280px; height: 720px; overflow: hidden; background: #0b1020; font-family: "Segoe UI", system-ui, sans-serif; }
+      .wrap { width: 1280px; height: 720px; padding: 22px; display: grid; grid-template-rows: 1fr 132px; gap: 14px; }
+      .browser { background: #f6f3ee; border-radius: 16px; overflow: hidden; border: 1px solid #2a3358; position: relative; }
+      .chrome { height: 46px; background: #ece8e1; display: flex; align-items: center; gap: 10px; padding: 0 14px; }
+      .dots { display: flex; gap: 6px; }
+      .dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+      .dots i:nth-child(1) { background: #ff6b6b; }
+      .dots i:nth-child(2) { background: #ffd166; }
+      .dots i:nth-child(3) { background: #7bd88f; }
+      .url { flex: 1; background: #fff; border-radius: 8px; height: 28px; display: flex; align-items: center; padding: 0 12px; font-size: 13px; color: #334; }
+      .live { background: #4d7cff; color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; padding: 6px 10px; border-radius: 8px; }
+      .nav { height: 44px; background: #12183a; color: #e4e9f8; display: flex; align-items: center; gap: 18px; padding: 0 16px; font-size: 14px; }
+      .nav b { color: #7aa2ff; }
+      .filters { display: flex; gap: 8px; padding: 12px 16px 8px; }
+      .filters span, .filters button { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 6px 10px; font-size: 12px; }
+      .filters button { background: #12183a; color: #fff; border: 0; }
+      .cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 8px 16px 16px; }
+      .card { background: #fff; border: 1px solid #e6e1d8; border-radius: 12px; overflow: hidden; }
+      .photo { height: 118px; }
+      .p1 { background: linear-gradient(135deg, #8aa2c8, #3a4a6e); }
+      .p2 { background: linear-gradient(135deg, #5aa9c8, #1f4d63); }
+      .p3 { background: linear-gradient(135deg, #4c63b6, #1b2a63); }
+      .body { padding: 10px 12px 12px; }
+      .body h3 { font-size: 15px; margin-bottom: 4px; color: #1b2030; }
+      .body p { font-size: 11px; color: #667; margin-bottom: 10px; }
+      .row { display: flex; justify-content: space-between; font-size: 12px; color: #334; margin-bottom: 8px; }
+      .cta { width: 100%; border: 0; background: #ece8e1; color: #445; padding: 8px; border-radius: 8px; font-size: 13px; }
+      .primary .cta { background: #12183a; color: #fff; }
+      .primary .cta.busy { background: #4d7cff; }
+      .dock { background: #12183a; border: 1px solid #7aa2ff24; border-radius: 14px; display: grid; grid-template-columns: 1fr 1fr; padding: 16px 22px; color: #8b95b3; font-size: 15px; }
+      .dock li { list-style: none; display: flex; gap: 10px; align-items: center; margin: 6px 0; }
+      .dock li.done { color: #e4e9f8; }
+      .dock li.active { color: #7aa2ff; }
+      .mark { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #4d7cff; flex: 0 0 16px; }
+      .done .mark { background: #4d7cff; }
+      .cursor {
+        position: absolute; width: 0; height: 0; z-index: 5;
+        border-left: 14px solid #f4f6ff; border-top: 10px solid transparent; border-bottom: 18px solid transparent;
+        filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.45)); pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="browser">
+        <div class="chrome">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div class="url">northstar-stays.demo/search</div>
+          <div class="live">LIVE</div>
+        </div>
+        <div class="nav"><b>Northstar</b> Stays · Search · Trips</div>
+        <div class="filters">
+          <span>New York, NY</span>
+          <span id="dates">Sep 10-15</span>
+          <span id="guests">2 guests</span>
+          <button>Search</button>
+        </div>
+        <div class="cards">
+          <article class="card primary">
+            <div class="photo p1"></div>
+            <div class="body">
+              <h3>The Grand Alcott</h3>
+              <p>Historic luxury · 2 min to Central Park</p>
+              <div class="row"><span>4.9 (328)</span><b>$249/nt</b></div>
+              <button class="cta" id="book">Book Now</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="photo p2"></div>
+            <div class="body">
+              <h3>Harbor House</h3>
+              <p>Waterfront views · artisan breakfast</p>
+              <div class="row"><span>4.7 (184)</span><b>$189/nt</b></div>
+              <button class="cta">View</button>
+            </div>
+          </article>
+          <article class="card">
+            <div class="photo p3"></div>
+            <div class="body">
+              <h3>Park View Suites</h3>
+              <p>Floor-to-ceiling windows · business center</p>
+              <div class="row"><span>4.8 (256)</span><b>$312/nt</b></div>
+              <button class="cta">View</button>
+            </div>
+          </article>
+        </div>
+        <div class="cursor" id="cursor"></div>
+      </div>
+      <ul class="dock">
+        <div>
+          <li data-step="0"><span class="mark"></span> Navigate to search page</li>
+          <li data-step="1"><span class="mark"></span> Fill in guest and date fields</li>
+          <li data-step="2"><span class="mark"></span> Submit booking form</li>
+        </div>
+        <div>
+          <li data-step="3"><span class="mark"></span> Verify confirmation screen</li>
+          <li data-step="4"><span class="mark"></span> Check booking appears in account</li>
+        </div>
+      </ul>
+    </div>
+    <script>
+      const path = [
+        [0, 220, 240],
+        [1.6, 250, 400],
+        [3.2, 250, 400],
+        [5.0, 640, 250],
+        [7.2, 980, 230],
+        [9.0, 250, 400],
+        [11.2, 250, 400],
+        [13.4, 1090, 175],
+        [18, 1090, 175],
+      ];
+      function lerp(t) {
+        for (let i = 0; i < path.length - 1; i++) {
+          const [t0, x0, y0] = path[i];
+          const [t1, x1, y1] = path[i + 1];
+          if (t <= t1) {
+            const u = (t - t0) / Math.max(t1 - t0, 0.001);
+            return [x0 + (x1 - x0) * u, y0 + (y1 - y0) * u];
+          }
+        }
+        return [1090, 175];
+      }
+      window.__setTime = (t) => {
+        const [x, y] = lerp(t);
+        const c = document.getElementById("cursor");
+        c.style.left = x + "px";
+        c.style.top = y + "px";
+        const book = document.getElementById("book");
+        if (t >= 9.2) { book.textContent = "Booking..."; book.classList.add("busy"); }
+        else { book.textContent = "Book Now"; book.classList.remove("busy"); }
+        document.getElementById("dates").style.outline = t > 4.4 && t < 6.2 ? "2px solid #4d7cff" : "";
+        document.getElementById("guests").style.outline = t > 4.4 && t < 6.2 ? "2px solid #4d7cff" : "";
+        const doneUntil = t > 11.5 ? 3 : t > 9.0 ? 2 : t > 5.4 ? 1 : t > 1.5 ? 0 : -1;
+        document.querySelectorAll("[data-step]").forEach((el) => {
+          const step = Number(el.dataset.step);
+          el.classList.toggle("done", step <= doneUntil);
+          el.classList.toggle("active", step === doneUntil + 1);
+        });
+      };
+    </script>
+  </body>
+</html>
