@@ -21,20 +21,18 @@ export function ProjectPage() {
 
   return (
     <main id="main">
-      <div className="page-hero">
-        <div>
-          <p className="section-tag">{project.eyebrow}</p>
-          <h1>{project.title}</h1>
-          <p className="lede">{project.lede}</p>
-          <div className="stack-pills">
-            {project.stack.map((s) => (
-              <span key={s}>{s}</span>
-            ))}
-          </div>
+      <header className="case-hero">
+        <p className="section-tag">{project.eyebrow}</p>
+        <h1>{project.title}</h1>
+        <p className="lede">{project.lede}</p>
+        <div className="stack-pills">
+          {project.stack.map((s) => (
+            <span key={s}>{s}</span>
+          ))}
         </div>
-        <div className="plate" style={{ width: "100%" }}>
-          <WorkMedia project={project} />
-        </div>
+      </header>
+      <div className="case-media plate">
+        <WorkMedia project={project} />
       </div>
 
       <section className="section">

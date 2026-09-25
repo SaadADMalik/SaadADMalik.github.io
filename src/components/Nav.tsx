@@ -36,7 +36,9 @@ export function Navbar({ menuOpen, onToggle }: Props) {
             {link.label}
           </Link>
         ))}
-        <a href={person.resume}>Resume</a>
+        <a href={person.resume} download={person.resumeFile}>
+          Resume
+        </a>
       </nav>
       <button
         className="nav-toggle"
@@ -83,7 +85,7 @@ export function MenuOverlay({
         <a href={`mailto:${person.email}`} onClick={onClose}>
           Contact
         </a>
-        <a href={person.resume} onClick={onClose}>
+        <a href={person.resume} download={person.resumeFile} onClick={onClose}>
           Resume
         </a>
       </nav>

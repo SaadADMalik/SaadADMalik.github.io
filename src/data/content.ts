@@ -11,7 +11,8 @@ export const person = {
   phoneHref: "tel:+923064009748",
   github: "https://github.com/SaadADMalik",
   linkedin: "https://www.linkedin.com/in/saadwaleedmalik",
-  resume: "/resume/Saad-Waleed-Resume.docx",
+  resume: "/resume/Saad-Waleed-Resume.pdf",
+  resumeFile: "Saad-Waleed-Resume.pdf",
   summary:
     "I build AI-powered software across LLM applications, retrieval pipelines, backend APIs, analytics dashboards, and ML-driven decision tools. Recent proof points include Rift AI (WhatsApp chief of staff for SMBs) and Peak QA (agentic QA platform). Strong focus on turning business workflows and unstructured data into usable products: Python, FastAPI, Flask, Streamlit, Docker, and cloud-oriented deployment.",
 };

@@ -26,7 +26,9 @@ export function Footer() {
             <Link to="/work">Work</Link>
             <Link to={{ pathname: "/", hash: "#skills" }}>Skills</Link>
             <Link to="/about">About</Link>
-            <a href={person.resume}>Resume</a>
+            <a href={person.resume} download={person.resumeFile}>
+              Resume
+            </a>
           </nav>
         </div>
         <div>

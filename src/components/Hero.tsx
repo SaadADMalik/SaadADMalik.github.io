@@ -55,7 +55,7 @@ export function Hero() {
           <a className="cta" href="#skills">
             Skills
           </a>
-          <a className="cta" href={person.resume}>
+          <a className="cta" href={person.resume} download={person.resumeFile}>
             Resume
           </a>
         </div>
